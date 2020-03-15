@@ -5,6 +5,7 @@ $secondary-color: #34434a;
 $main-blue: #2278EA;
 $grey-light: #f9f9f9;
 $grey-normal: #979797;
+$grey-normal-2: #8F8F8F;
 $grey-darker: #eeefef;
 
 
@@ -195,4 +196,31 @@ main {
   width: 2px;
   background-color: $secondary-color;
   border: 1px solid $secondary-color;
+}
+
+.ad-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 35px;
+
+  .info-title {
+    color: $grey-normal-2;
+    font-weight: 500;
+
+    img {
+      color: $grey-darker;
+    }
+  }
+
+  .info-text {
+    color: $secondary-color;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+
+  .tab-2 {
+    margin-left: 120px;
+  }
+
 }

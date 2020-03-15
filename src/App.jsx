@@ -46,7 +46,7 @@ function App() {
       
       <main>
 
-       <a href="//#region "><Logo /></a>
+        <Logo />
         
         <div className="search-box">
           <input 
@@ -85,6 +85,37 @@ function App() {
             </div>
             {/* <div className="info">{weather.weather[0].main === "Rain" ? Warnings.raining : "The weather looks peaceful"}</div> */}
           </div>
+
+
+          <div className="ad-info">
+            <div className="tab-1">
+
+              <div className="wind">
+                <p className="info-title">Wind</p>
+                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /><p className="info-text">{Math.round(weather.wind.speed * 2.237)} mph</p>
+              </div>
+
+              <div className="humidity">
+                <p className="info-title">Humidity</p>
+                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /> <p className="info-text">{Math.round(weather.main.humidity)}%</p>
+              </div>
+
+            </div>
+
+            <div className="tab-2">
+
+              <div className="cloud-cover">
+                <p className="info-title">Cloud Cover</p>
+                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /><p className="info-text">{Math.round(weather.clouds.all)}%</p>
+              </div>
+
+              <div className="real-feel">
+                <p className="info-title">Real Feel</p>
+                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /><p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
+              </div>
+            </div>
+
+            </div>
 
           <div className="weather">{weather.weather[0].main}</div>
         </div>
