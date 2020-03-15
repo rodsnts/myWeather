@@ -18,7 +18,7 @@ function App() {
           setWeather(result);
           setQuery('');
           if (result.cod === "404") {
-            alert(result.message);
+            alert(`Error ${result.cod}: ${result.message}`);
           }
         });
     }
