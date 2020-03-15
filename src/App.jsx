@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Logo from './Logo.jsx';
 import './app.styles.scss';
+
 const api = {
   key: "e169d6c19cc0401097c392871a8df992",
   base: "https://api.openweathermap.org/data/2.5/"
@@ -36,13 +37,6 @@ function App() {
     return `${day}, ${date} ${month}`
   }
 
-  // const Warnings = {
-  //   raining: "It looks like it's raining, better go out with an umbrella",
-  //   sunny: "The sun looks very strong, better use a sunscreen",
-  //   clouds: "",
-  //   clear: ""
-  // }
-
   return (
 
     <div className="app">
@@ -69,7 +63,7 @@ function App() {
         <div>
 
           <div className="location-box">
-            <p className="location">{weather.name}, {weather.sys.country}</p>  {/*CITY, COUNTRY */}
+            <p className="location">{weather.name}, {weather.sys.country}</p>
             <p className="date">{dateBuilder(new Date())}</p>
           </div>
 
@@ -86,10 +80,9 @@ function App() {
               <p className="max">{Math.round(weather.main.temp_max)}<sup>°C</sup></p>
               <p className="min">{Math.round(weather.main.temp_min)}<sup>°C</sup></p>
             </div>
-            {/* <div className="info">{weather.weather[0].main === "Rain" ? Warnings.raining : "The weather looks peaceful"}</div> */}
           </div>
 
-
+          <section>
           <div className="ad-info">
             <div className="tab-1">
 
@@ -121,8 +114,16 @@ function App() {
                 <p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
               </div>
             </div>
+          </div>
 
-            </div>
+          <div className="conditions">
+            <i class={(weather.weather[0].main === "Rain") ? ("fas fa-cloud-rain") : "fas fa-cloud"}></i>
+            <p className={"conditions-name"}>Conditions</p>
+            <p>{weather.weather[0].main}</p>
+          </div>
+          </section>
+
+
 
           <div className="weather">{weather.weather[0].main}</div>
         </div>

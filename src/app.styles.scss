@@ -228,3 +228,27 @@ img {
   float: left;
   margin-top: 6px;
 }
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.conditions {
+  margin-left: 150px;
+  font-weight: 700;
+  text-align: center;
+
+  i {
+    font-size: 90px;
+    margin-bottom: 25px;
+    color: $main-color;
+  }
+
+  &-name {
+    color: #8F8F8F;
+    font-weight: 500;
+  }
+}
