@@ -17,6 +17,10 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery('');
+        }).then((data) => {
+          if (data === undefined) {
+            alert("City not found");
+          }
         });
     }
   }
@@ -28,9 +32,8 @@ function App() {
     let day = days[d.getDay()];
     let date = d.getDate();
     let month = months[d.getMonth()];
-    let year = d.getFullYear();
 
-    return `${day} ${date} ${month} ${year}`
+    return `${day}, ${date} ${month}`
   }
 
   // const Warnings = {
@@ -91,13 +94,15 @@ function App() {
             <div className="tab-1">
 
               <div className="wind">
+                <img src={require('./assets/svg/wind-solid.svg')} width="30px" alt="wind-logo" />
                 <p className="info-title">Wind</p>
-                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /><p className="info-text">{Math.round(weather.wind.speed * 2.237)} mph</p>
+                <p className="info-text">{Math.round(weather.wind.speed * 2.237)} mph</p>
               </div>
 
               <div className="humidity">
+                <img src={require('./assets/svg/cloud-showers-heavy-solid.svg')} width="30px" alt="wind-logo" />
                 <p className="info-title">Humidity</p>
-                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /> <p className="info-text">{Math.round(weather.main.humidity)}%</p>
+                <p className="info-text">{Math.round(weather.main.humidity)}%</p>
               </div>
 
             </div>
@@ -105,13 +110,15 @@ function App() {
             <div className="tab-2">
 
               <div className="cloud-cover">
+                <img src={require('./assets/svg/cloud-solid.svg')} width="30px" alt="wind-logo" />
                 <p className="info-title">Cloud Cover</p>
-                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /><p className="info-text">{Math.round(weather.clouds.all)}%</p>
+                <p className="info-text">{Math.round(weather.clouds.all)}%</p>
               </div>
 
               <div className="real-feel">
+                <img src={require('./assets/svg/sun-regular.svg')} width="30px" alt="wind-logo" />
                 <p className="info-title">Real Feel</p>
-                <img src={require('./assets/svg/wind-solid.svg')} height="20px" alt="wind-logo" /><p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
+                <p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
               </div>
             </div>
 

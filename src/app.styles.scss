@@ -207,20 +207,24 @@ main {
   .info-title {
     color: $grey-normal-2;
     font-weight: 500;
-
-    img {
-      color: $grey-darker;
-    }
+    margin-left: 45px;
   }
 
   .info-text {
     color: $secondary-color;
     font-weight: 600;
     margin-bottom: 25px;
+    margin-left: 45px;
   }
 
   .tab-2 {
     margin-left: 120px;
   }
 
+}
+
+img {
+  position: absolute;
+  float: left;
+  margin-top: 6px;
 }
