@@ -17,14 +17,14 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery('');
-        }).then((data) => {
-          if (data === undefined) {
-            alert("City not found");
+          if (result.cod === "404") {
+            alert(result.message);
           }
         });
     }
   }
 
+  
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
