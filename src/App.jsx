@@ -101,13 +101,17 @@ function App() {
               <div className="tab-1">
 
                 <div className="wind">
-                  <img src={require('./assets/svg/wind-solid.svg')} width="30px" alt="wind-logo" />
+                  <img src={require('./assets/svg/wind-solid.svg')} 
+                       width="30px" 
+                       alt="wind-logo" />
                   <p className="info-title">Wind</p>
                   <p className="info-text">{Math.round(weather.wind.speed * 2.237)} mph</p>
                 </div>
 
                 <div className="humidity">
-                  <img src={require('./assets/svg/cloud-showers-heavy-solid.svg')} width="30px" alt="wind-logo" />
+                  <img src={require('./assets/svg/cloud-showers-heavy-solid.svg')} 
+                       width="30px" 
+                       alt="wind-logo" />
                   <p className="info-title">Humidity</p>
                   <p className="info-text">{Math.round(weather.main.humidity)}%</p>
                 </div>
@@ -117,13 +121,17 @@ function App() {
               <div className="tab-2">
 
                 <div className="cloud-cover">
-                  <img src={require('./assets/svg/cloud-solid.svg')} width="30px" alt="wind-logo" />
+                  <img src={require('./assets/svg/cloud-solid.svg')} 
+                       width="30px" 
+                       alt="wind-logo" />
                   <p className="info-title">Cloud Cover</p>
                   <p className="info-text">{Math.round(weather.clouds.all)}%</p>
                 </div>
 
                 <div className="real-feel">
-                  <img src={require('./assets/svg/sun-regular.svg')} width="30px" alt="wind-logo" />
+                  <img src={require('./assets/svg/sun-regular.svg')} 
+                       width="30px" 
+                       alt="wind-logo" />
                   <p className="info-title">Real Feel</p>
                   <p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
                 </div>
@@ -133,7 +141,12 @@ function App() {
             </div>
 
             <div className="conditions">
-              <i className={(weather.weather[0].main === "Rain") ? "fas fa-cloud-rain" : (weather.weather[0].main === "Clear") ? "fas fa-cloud-sun" : (weather.weather[0].main === "Clouds") ? "fas fa-cloud" : "far fa-snowflake"}></i>
+              <i className={(weather.weather[0].main === "Rain") 
+                            ? "fas fa-cloud-rain" 
+                            : (weather.weather[0].main === "Clear") 
+                            ? "fas fa-cloud-sun" : (weather.weather[0].main === "Clouds") 
+                            ? "fas fa-cloud" 
+                            : "far fa-snowflake"}></i>
               <p className={"conditions-name"}>Conditions</p>
               <p>{weather.weather[0].main}</p>
             </div>
