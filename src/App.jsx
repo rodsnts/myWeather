@@ -45,6 +45,8 @@ function App() {
 
         <Logo />
         
+          {/* =========================== SEARCH BOX ===========================*/}
+
         <div className="search-box">
           <input 
             type="text"
@@ -56,71 +58,85 @@ function App() {
           />
         </div>
 
-        <div className="scale">
-        </div>
-        
         {(typeof weather.main != "undefined") ? (
         <div>
 
-          <div className="location-box">
-            <p className="location">{weather.name}, {weather.sys.country}</p>
-            <p className="date">{dateBuilder(new Date())}</p>
-          </div>
 
-          <div className="weather-box">
-            <div className="temp">
-              <div className="temp-box">
-                <p className="temp">{Math.round(weather.main.temp)}</p><span>C°</span>
-              </div>
+          <section>         
+            {/* =========================== CURRENT W. ===========================*/}
+          
+            <div className="location-box">
+              <p className="location">{weather.name}, {weather.sys.country}</p>
+              <p className="date">{dateBuilder(new Date())}</p>
             </div>
 
-            <span className="bar"></span>
+            {/* =========================== MAIN TEMP. ===========================*/}
 
-            <div className="min-max">
-              <p className="max">{Math.round(weather.main.temp_max)}<sup>°C</sup></p>
-              <p className="min">{Math.round(weather.main.temp_min)}<sup>°C</sup></p>
-            </div>
-          </div>
-
-          <section>
-          <div className="ad-info">
-            <div className="tab-1">
-
-              <div className="wind">
-                <img src={require('./assets/svg/wind-solid.svg')} width="30px" alt="wind-logo" />
-                <p className="info-title">Wind</p>
-                <p className="info-text">{Math.round(weather.wind.speed * 2.237)} mph</p>
+            <div className="weather-box">
+              <div className="temp">
+                <div className="temp-box">
+                  <p className="temp">{Math.round(weather.main.temp)}</p><span>C°</span>
+                </div>
               </div>
 
-              <div className="humidity">
-                <img src={require('./assets/svg/cloud-showers-heavy-solid.svg')} width="30px" alt="wind-logo" />
-                <p className="info-title">Humidity</p>
-                <p className="info-text">{Math.round(weather.main.humidity)}%</p>
+              <span className="bar"></span>
+
+            {/* =========================== MIN/MAX ===========================*/}
+
+              <div className="min-max">
+                <p className="max">{Math.round(weather.main.temp_max)}<sup>°C</sup></p>
+                <p className="min">{Math.round(weather.main.temp_min)}<sup>°C</sup></p>
               </div>
 
             </div>
+          </section>
 
-            <div className="tab-2">
 
-              <div className="cloud-cover">
-                <img src={require('./assets/svg/cloud-solid.svg')} width="30px" alt="wind-logo" />
-                <p className="info-title">Cloud Cover</p>
-                <p className="info-text">{Math.round(weather.clouds.all)}%</p>
+          <section id="info">
+
+            {/* =========================== MORE INFO ===========================*/}
+
+            <div className="ad-info">
+
+              <div className="tab-1">
+
+                <div className="wind">
+                  <img src={require('./assets/svg/wind-solid.svg')} width="30px" alt="wind-logo" />
+                  <p className="info-title">Wind</p>
+                  <p className="info-text">{Math.round(weather.wind.speed * 2.237)} mph</p>
+                </div>
+
+                <div className="humidity">
+                  <img src={require('./assets/svg/cloud-showers-heavy-solid.svg')} width="30px" alt="wind-logo" />
+                  <p className="info-title">Humidity</p>
+                  <p className="info-text">{Math.round(weather.main.humidity)}%</p>
+                </div>
+
               </div>
 
-              <div className="real-feel">
-                <img src={require('./assets/svg/sun-regular.svg')} width="30px" alt="wind-logo" />
-                <p className="info-title">Real Feel</p>
-                <p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
+              <div className="tab-2">
+
+                <div className="cloud-cover">
+                  <img src={require('./assets/svg/cloud-solid.svg')} width="30px" alt="wind-logo" />
+                  <p className="info-title">Cloud Cover</p>
+                  <p className="info-text">{Math.round(weather.clouds.all)}%</p>
+                </div>
+
+                <div className="real-feel">
+                  <img src={require('./assets/svg/sun-regular.svg')} width="30px" alt="wind-logo" />
+                  <p className="info-title">Real Feel</p>
+                  <p className="info-text">{Math.round(weather.main.feels_like)}°C</p>
+                </div>
+
               </div>
+
             </div>
-          </div>
 
-          <div className="conditions">
-            <i class={(weather.weather[0].main === "Rain") ? ("fas fa-cloud-rain") : "fas fa-cloud"}></i>
-            <p className={"conditions-name"}>Conditions</p>
-            <p>{weather.weather[0].main}</p>
-          </div>
+            <div className="conditions">
+              <i className={(weather.weather[0].main === "Rain") ? ("fas fa-cloud-rain") : "fas fa-cloud"}></i>
+              <p className={"conditions-name"}>Conditions</p>
+              <p>{weather.weather[0].main}</p>
+            </div>
           </section>
 
 

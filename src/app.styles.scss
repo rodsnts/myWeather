@@ -9,7 +9,7 @@ $grey-normal-2: #8F8F8F;
 $grey-darker: #eeefef;
 
 
-/////////////////////////////////////
+///////////////////////////////////// MAIN
 * {
   margin: 0;
   padding: 0;
@@ -229,7 +229,7 @@ img {
   margin-top: 6px;
 }
 
-section {
+#info {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -251,4 +251,16 @@ section {
     color: #8F8F8F;
     font-weight: 500;
   }
+}
+
+// =================== MIXINS =====================
+
+@media only screen and (max-width: 1000px) {
+  .app {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vh;
+  }
+
 }
