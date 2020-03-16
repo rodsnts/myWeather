@@ -151,10 +151,6 @@ function App() {
               <p>{weather.weather[0].main}</p>
             </div>
           </section>
-
-
-
-          <div className="weather">{weather.weather[0].main}</div>
         </div>
         ) : ('')}
       </main>
