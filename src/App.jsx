@@ -133,7 +133,7 @@ function App() {
             </div>
 
             <div className="conditions">
-              <i className={(weather.weather[0].main === "Rain") ? ("fas fa-cloud-rain") : "fas fa-cloud"}></i>
+              <i className={(weather.weather[0].main === "Rain") ? "fas fa-cloud-rain" : (weather.weather[0].main === "Clear") ? "fas fa-cloud-sun" : (weather.weather[0].main === "Clouds") ? "fas fa-cloud" : "far fa-snowflake"}></i>
               <p className={"conditions-name"}>Conditions</p>
               <p>{weather.weather[0].main}</p>
             </div>
