@@ -266,7 +266,6 @@ img {
 @media only screen and (max-width: 650px) {
 
   main {
-    overflow: hidden;
     border-radius: 0;
   }
 
@@ -286,5 +285,13 @@ img {
       font-size: 70px;
       margin-top: 10px;
     }
+  }
+
+  .temp {
+    padding: 0 !important;
+  }
+
+  .tab-2 {
+    margin-left: 30px !important;
   }
 }
